@@ -3,3 +3,7 @@ mimimum cost path between 52 and 29 is [52，206，774，957，491，758，85，
 COST is 3 + 1 + 2 + 3 + 7 + 7 + 1 = 24
 b.
 
+('found a path', '52', '34', '337', '29')
+('found a path', '52', '206', '451', '29')
+('found a path', '52', '527', '151', '29')
+
