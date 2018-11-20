@@ -1,5 +1,5 @@
 a.
-mimimum cost path between 52 and 29 is ['52', '206', '777', '632', '29']
-3 + 22 + 5 + 11
+mimimum cost path between 52 and 29 is [52，206，774，957，491，758，85，29]
+COST is 3 + 1 + 2 + 3 + 7 + 7 + 1 = 24
 b.
 
