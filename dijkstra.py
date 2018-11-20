@@ -1,5 +1,5 @@
 from collections import deque, namedtuple
-
+import re
 
 # we'll use infinity as a default distance to nodes.
 inf = float('inf')
@@ -88,10 +88,31 @@ class Graph:
             path.appendleft(current_vertex)
         return path
 
+fname = './data/graph.txt'
+with open(fname) as f:
+    content = f.readlines()
+# you may also want to remove whitespace characters like `\n` at the end of each line
+graphList = []
 
-graph = Graph([
-    ("a", "b", 7),  ("a", "c", 9),  ("a", "f", 14), ("b", "c", 10),
-    ("b", "d", 15), ("c", "d", 11), ("c", "f", 2),  ("d", "e", 6),
-    ("e", "f", 9)])
+def checkExist(a,b):
+    for i in range(len(graphList)):
+        if((graphList[i][0] == a and graphList[i][1] == b) or (graphList[i][0] == b and graphList[i][1] == a)):
+            return i
+    return -1
 
-print(graph.dijkstra("a", "e"))
+for i in range(len(content)):
+    line =  re.sub("\s+", ",", content[i].strip()).split(',')
+    start = line[0].strip()
+    end = line[1].strip()
+    cost = int(line[2].strip())
+    res = checkExist(start, end)
+    if( res > -1):
+        graphList[res] = (start,end,cost)
+    graphList.append((start,end,cost)))
+
+print("##### starting dijkstra")
+graph = Graph(graphList)
+print(graph.dijkstra("52", "29"))
+
+
+ 
